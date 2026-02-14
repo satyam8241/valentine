@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff6b9c, #ff9a9e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: #ff7aa2;
+      width: 360px;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid white;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+      margin-top: 10px;
+    } 
+
+    .final-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        text-align: center;
+        color: white;
+        }
+
+        .final-container h1 {
+        margin-bottom: 20px;
+        }
+
+        .final-container p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+
+    button {
+      padding: 10px 22px;
+      border-radius: 20px;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: #2f2f2f;
+      color: white;
+      position: relative; /* IMPORTANT */
+      transition: transform 0.15s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <img
+      src="amrita.jpeg"
+      class="avatar"
+      alt="Her Photo"
+    >
+
+    <h2>Hey CuteRita My Love 💖</h2>
+
+    <p>
+      Every smile of yours feels like home.  
+      Every moment with you feels like magic.  
+      And today… I just have one important question.
+    </p>
+
+    <p><strong>Will you be my Valentine? 💝</strong></p>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">Yes ❤️</button>
+      <button id="no">No 💔</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseenter", () => {
+      const x = Math.random() * 300 - 150; // left / right
+      const y = Math.random() * 200 - 100; // up / down
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction:column;
+          background:linear-gradient(135deg,#ff6b9c,#ff9a9e);
+          color:white;
+          font-family:Poppins,sans-serif;
+          text-align:center;
+        ">
+          <div class="final-container">
+            <h1>Yayyyy!! 💕🥰</h1>
+
+            <p>
+                With a smile that feels like home and a heart that feels like magic…<br>
+                Amrita is officially the Valentine of Satyam ❤️<br>
+                Today, tomorrow, always.<br>
+                <h3>Lots of Loveeeeeeeee from Satyam :) </h3>
+            </p>
+          </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
